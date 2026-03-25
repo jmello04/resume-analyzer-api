@@ -1,0 +1,43 @@
+name: Sugestão de Funcionalidade
+description: Tem uma ideia para melhorar o projeto? Compartilhe!
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado pela sugestão! Descreva sua ideia com o máximo de detalhes possível.
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual problema essa funcionalidade resolve?
+      description: Descreva a motivação por trás da sugestão.
+      placeholder: "Atualmente não é possível... o que dificulta..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Solução proposta
+      description: Descreva como você imagina que a funcionalidade deveria funcionar.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas
+      description: Descreva outras soluções ou funcionalidades que você considerou.
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade percebida
+      options:
+        - Baixa — seria legal ter
+        - Média — melhoraria bastante o uso
+        - Alta — sem isso o projeto fica limitado
+    validations:
+      required: true
