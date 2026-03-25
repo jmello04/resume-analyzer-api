@@ -1,0 +1,42 @@
+name: CI — Testes e Qualidade de Código
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Testes automatizados (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Executar testes com cobertura
+        env:
+          ANALYSIS_API_KEY: placeholder-for-ci
+          DATABASE_URL: sqlite:///./test_ci.db
+          DEBUG: "false"
+        run: pytest --cov=app --cov-report=term-missing
+
+      - name: Verificar importações da aplicação
+        env:
+          ANALYSIS_API_KEY: placeholder-for-ci
+          DATABASE_URL: sqlite:///./test_ci.db
+        run: python -c "from app.main import app; print('Importações OK')"
