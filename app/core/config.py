@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
     DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/resume_analyzer"
     ANALYSIS_API_KEY: str = "placeholder"
-    ANALYSIS_MODEL: str = "claude-sonnet-4-6"
+    ANALYSIS_MODEL: str = "default-model"
     ALLOWED_ORIGINS: List[str] = ["*"]
     APP_NAME: str = "Resume Analyzer API"
     APP_VERSION: str = "1.0.0"

@@ -311,7 +311,7 @@ A suíte de testes cobre:
 |---|---|---|---|
 | `ANALYSIS_API_KEY` | **Sim** | — | Chave de autenticação do serviço de análise |
 | `DATABASE_URL` | **Sim** | — | String de conexão PostgreSQL |
-| `ANALYSIS_MODEL` | Não | `claude-sonnet-4-6` | Modelo de análise utilizado |
+| `ANALYSIS_MODEL` | Não | ver `.env.example` | Modelo de análise utilizado |
 | `ALLOWED_ORIGINS` | Não | `["*"]` | Origens permitidas pelo CORS |
 | `DEBUG` | Não | `false` | Ativa logs detalhados |
 
