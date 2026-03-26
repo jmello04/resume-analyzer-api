@@ -1,37 +1,23 @@
-# Variáveis de ambiente
-.env
-
-# Cache do Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.pyo
-
-# Ambiente virtual
+*.egg-info/
+dist/
+build/
+.env
+.env.local
+.env.production
+.env.staging
 .venv/
 venv/
-env/
-
-# Pytest
+ENV/
 .pytest_cache/
 .coverage
 htmlcov/
-
-# Banco de dados de teste
-*.db
-
-# Distribuição / empacotamento
-dist/
-build/
-*.egg-info/
-.eggs/
-
-# IDEs
-.vscode/
+.mypy_cache/
+.ruff_cache/
 .idea/
+.vscode/
 *.swp
-*.swo
-
-# Sistema operacional
 .DS_Store
 Thumbs.db
+*.log
